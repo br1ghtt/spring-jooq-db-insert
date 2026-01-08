@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class SpringJooqDbInsertApplication
 
 fun main(args: Array<String>) {
-	runApplication<SpringJooqDbInsertApplication>(*args)
+    runApplication<SpringJooqDbInsertApplication>(*args)
 }

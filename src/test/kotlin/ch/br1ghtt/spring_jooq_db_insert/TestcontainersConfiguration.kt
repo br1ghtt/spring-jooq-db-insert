@@ -9,17 +9,11 @@ import org.testcontainers.utility.DockerImageName
 
 @TestConfiguration(proxyBeanMethods = false)
 class TestcontainersConfiguration {
+    @Bean
+    @ServiceConnection
+    fun mysqlContainer(): MySQLContainer = MySQLContainer(DockerImageName.parse("mysql:9.5.0"))
 
-	@Bean
-	@ServiceConnection
-	fun mysqlContainer(): MySQLContainer {
-		return MySQLContainer(DockerImageName.parse("mysql:9.5.0"))
-	}
-
-	@Bean
-	@ServiceConnection
-	fun oracleContainer(): OracleContainer {
-		return OracleContainer(DockerImageName.parse("gvenzl/oracle-free:23-slim-faststart"))
-	}
-
+    @Bean
+    @ServiceConnection
+    fun oracleContainer(): OracleContainer = OracleContainer(DockerImageName.parse("gvenzl/oracle-free:23-slim-faststart"))
 }
