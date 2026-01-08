@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-jooq-db-insert
+  threads:
+    virtual:
+      enabled: true
